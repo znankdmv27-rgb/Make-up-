@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glamour Boutique | Premium Makeup & Beauty</title>
+    <title>SreyMouy / sell</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- jQuery CDN -->
@@ -11,7 +11,13 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom Styles -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
     <style>
+    body{
+        font-family: "Koulen", sans-serif;
+    }
         /* Custom styles to enhance Tailwind */
         .discount-badge {
             position: absolute;
@@ -23,13 +29,23 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
+            z-index: 10;
         }
         .product-card {
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
         .flash-timer {
             background: linear-gradient(135deg, #f97316, #ec4899);
@@ -64,6 +80,15 @@
         .pulse-animation {
             animation: pulse 2s infinite;
         }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -76,7 +101,7 @@
                     <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
                         <i class="fas fa-paint-brush text-white"></i>
                     </div>
-                    <h1 class="text-2xl font-bold brand-gradient">Glamour Boutique</h1>
+                    <h1 class="text-2xl font-bold brand-gradient">Srey Mouy Shop</h1>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -121,21 +146,21 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Elevate Your Beauty Game</h2>
-                    <p class="text-gray-600 text-lg mb-8">Discover premium makeup products curated by beauty experts. Flash discounts up to 70% off on top brands!</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">New Blush SreyMoy Shop</h2>
+                    <p class="text-gray-600 text-lg mb-8">បញ្ចុះតម្លៃរហោតទៅដល់៥០ភាគរយ ​ចុចទិញឥឡូវនេះពេលវេលាមានកំណត់ មានគ្រប់សាខាគ្រប់ទីកន្លែងទីក្រុងភ្នុំពេញ​ និង​ ២៥​ ខេត្តក្រុង</p>
                     <div class="flex space-x-4">
-                        <a href="#flash-sale" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300">Shop Flash Sale</a>
+                        <a href="#flash-sale" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300">Buy Now</a>
                         <a href="#products" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg border border-gray-300 shadow transition duration-300">Browse All</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Makeup Products" class="rounded-lg shadow-2xl w-full max-w-lg">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1743514707575-RE-EDIT-PKA%2528final%2529-27.jpg&w=3840&q=75" alt="Makeup Products" class="rounded-lg shadow-2xl w-full max-w-lg">
                         <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
                             <div class="text-center">
-                                <p class="text-sm text-gray-500">Today's Special</p>
-                                <p class="text-2xl font-bold text-pink-500">60% OFF</p>
-                                <p class="text-xs text-gray-500">On All Lipsticks</p>
+                                <p class="text-sm text-gray-500">ថ្ងៃនេះបញ្ចុះតម្លៃពិសេសរហូតដល់</p>
+                                <p class="text-2xl font-bold text-pink-500">50% OFF</p>
+                                <p class="text-xs text-gray-500">ផ្កា Blush</p>
                             </div>
                         </div>
                     </div>
@@ -148,13 +173,12 @@
     <section id="flash-sale" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Flash Sale <span class="text-red-500">🔥</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Limited time offers on premium makeup products. These deals won't last long!</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">បញ្ចុះតម្លៃពិសេស <span class="text-red-500">🔥</span></h2>
             </div>
             
             <!-- Flash Sale Timer -->
             <div class="flash-timer max-w-2xl mx-auto rounded-xl p-6 mb-10 text-center shadow-lg">
-                <h3 class="text-xl font-bold mb-4">Sale Ends In:</h3>
+                <h3 class="text-xl font-bold mb-4">ពេលវេលាផុតកំណត់</h3>
                 <div class="flex justify-center space-x-4 md:space-x-8">
                     <div class="text-center">
                         <div class="text-3xl md:text-4xl font-bold" id="hours">12</div>
@@ -171,29 +195,30 @@
                         <div class="text-sm">Seconds</div>
                     </div>
                 </div>
-                <p class="mt-4 text-sm">Prices go back up when the timer hits zero!</p>
+                <p class="mt-4 text-sm">ផុតកំណត់នៅពេលនាទីដើរថយក្រោយចប់!</p>
             </div>
             
             <!-- Flash Sale Products -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 relative">
-                    <div class="discount-badge pulse-animation">FLASH 65% OFF</div>
+                    <div class="discount-badge pulse-animation">FLASH ៥០% OFF</div>
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1766682213615-1763257449176-Set%252020%2520281%252029.png&w=640&q=75" 
+                             alt="Luxe Matte Lipstick Set" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-48 h-48 bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-lipstick text-6xl text-pink-400"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Luxe Matte Lipstick Set</h3>
-                        <p class="text-gray-600 mb-4">Long-lasting matte lipstick in 6 vibrant shades. 12-hour wear.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">៣ ពណ៍</h3>
+                        <p class="text-gray-600 mb-4">បញ្ចុះតម្លៃរហោតទៅដល់៥០ភាគរយ ​ចុចទិញឥឡូវនេះពេលវេលាមានកំណត់ មានគ្រប់សាខាគ្រប់ទីកន្លែងទីក្រុងភ្នុំពេញ​ និង​ ២៥​ ខេត្តក្រុង</p>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-2xl font-bold text-gray-800">$24.99</span>
-                                <span class="text-gray-400 line-through ml-2">$69.99</span>
+                                <span class="text-2xl font-bold text-gray-800">$15</span>
+                                <span class="text-gray-400 line-through ml-2">$30</span>
                             </div>
-                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Luxe Matte Lipstick Set" data-price="24.99">
-                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil ៣​ ពណ៍" data-price="15">
+                                <i class="fas fa-cart-plus mr-2"></i>ទិញឥឡូវនេះ
                             </button>
                         </div>
                     </div>
@@ -201,22 +226,23 @@
                 
                 <!-- Product 2 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 relative">
-                    <div class="discount-badge pulse-animation">FLASH 55% OFF</div>
+                    <div class="discount-badge pulse-animation">FLASH 50% OFF</div>
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1766682056702-Phka%2520Romyol.png&w=640&q=75" 
+                             alt="Pro Eyeshadow Palette" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-48 h-48 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-eye text-6xl text-blue-400"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Pro Eyeshadow Palette</h3>
-                        <p class="text-gray-600 mb-4">18 highly pigmented shades for day to night looks. Vegan formula.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្ការំយោល</h3>
+                        <p class="text-gray-600 mb-4">បញ្ចុះតម្លៃរហូតទៅដល់៥០ភាគរយ ចុចទិញឥឡូវនេះពេលវេលាមានកំណត់ មានគ្រប់សាខាគ្រប់ទីកន្លែងទីក្រុងភ្នុំពេញ​ និង​ ២៥​ ខេត្តក្រុង</p>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-2xl font-bold text-gray-800">$29.99</span>
-                                <span class="text-gray-400 line-through ml-2">$66.99</span>
+                                <span class="text-2xl font-bold text-gray-800">$5</span>
+                                <span class="text-gray-400 line-through ml-2">$10</span>
                             </div>
-                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Pro Eyeshadow Palette" data-price="29.99">
-                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil រំយោល" data-price="10">
+                                <i class="fas fa-cart-plus mr-2"></i>ទិញឥឡូវនេះ
                             </button>
                         </div>
                     </div>
@@ -224,22 +250,23 @@
                 
                 <!-- Product 3 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 relative">
-                    <div class="discount-badge pulse-animation">FLASH 60% OFF</div>
+                    <div class="discount-badge pulse-animation">FLASH 50% OFF</div>
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1766682044221-Phka%2520Tro%2520Bek%2520Prei.png&w=640&q=75" 
+                             alt="24HR Foundation + Setting Spray" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-48 h-48 bg-gradient-to-r from-amber-100 to-orange-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-spray-can text-6xl text-amber-400"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">24HR Foundation + Setting Spray</h3>
-                        <p class="text-gray-600 mb-4">Full coverage foundation with built-in setting spray for all-day wear.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្កាត្របែកព្រៃ</h3>
+                        <p class="text-gray-600 mb-4">បញ្ចុះតម្លៃរហូតទៅដល់៥០ភាគរយ ចុចទិញឥឡូវនេះពេលវេលាមានកំណត់ មានគ្រប់សាខាគ្រប់ទីកន្លែងទីក្រុងភ្នុំពេញ​ និង​ ២៥​ ខេត្តក្រុង</p>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-2xl font-bold text-gray-800">$32.99</span>
-                                <span class="text-gray-400 line-through ml-2">$82.99</span>
+                                <span class="text-2xl font-bold text-gray-800">$5</span>
+                                <span class="text-gray-400 line-through ml-2">$10</span>
                             </div>
-                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="24HR Foundation + Setting Spray" data-price="32.99">
-                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil ត្របែកព្រៃ" data-price="5">
+                                <i class="fas fa-cart-plus mr-2"></i>ទិញឥឡូវនែះ
                             </button>
                         </div>
                     </div>
@@ -248,7 +275,7 @@
             
             <div class="text-center mt-12">
                 <a href="#" class="inline-block bg-gray-800 hover:bg-black text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                    View All Flash Deals <i class="fas fa-arrow-right ml-2"></i>
+                    មើលទាំងអស់ <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
@@ -258,19 +285,19 @@
     <section id="popular" class="py-16 bg-gradient-to-b from-white to-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Popular Products <span class="text-yellow-500">⭐</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our bestsellers loved by thousands of beauty enthusiasts worldwide.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">បញ្ចុះតម្លៃពិសេស<span class="text-yellow-500">⭐</span></h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Product 1 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810316026-Phka%2520Kolab.jpg&w=640&q=75" 
+                             alt="Radiant Blush Duo" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-40 h-40 bg-gradient-to-r from-rose-100 to-pink-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-blush text-5xl text-rose-400"></i>
-                            </div>
-                        </div>
                         <div class="flex items-center mb-2">
                             <div class="flex text-amber-400">
                                 <i class="fas fa-star"></i>
@@ -281,11 +308,11 @@
                             </div>
                             <span class="text-gray-500 text-sm ml-2">(4.5)</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Radiant Blush Duo</h3>
-                        <p class="text-gray-600 text-sm mb-4">Dual-tone blush for a natural, glowing finish. Buildable color.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្កា កុលាប</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-800">$18.99</span>
-                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Radiant Blush Duo" data-price="18.99">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្កា កុលាប" data-price="5">
                                 <i class="fas fa-cart-plus"></i>
                             </button>
                         </div>
@@ -294,12 +321,13 @@
                 
                 <!-- Product 2 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810323234-Phka%2520Chouk.jpg&w=640&q=75" 
+                             alt="Artist Brush Set" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-40 h-40 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-palette text-5xl text-emerald-400"></i>
-                            </div>
-                        </div>
                         <div class="flex items-center mb-2">
                             <div class="flex text-amber-400">
                                 <i class="fas fa-star"></i>
@@ -310,11 +338,11 @@
                             </div>
                             <span class="text-gray-500 text-sm ml-2">(5.0)</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Artist Brush Set</h3>
-                        <p class="text-gray-600 text-sm mb-4">12 professional makeup brushes for flawless application.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្កា ឈូក</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-800">$34.99</span>
-                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Artist Brush Set" data-price="34.99">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្កា​ ឈូក" data-price="5">
                                 <i class="fas fa-cart-plus"></i>
                             </button>
                         </div>
@@ -323,12 +351,13 @@
                 
                 <!-- Product 3 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810330113-Phka%2520Phkor%2520Lorn.jpg&w=640&q=75" 
+                             alt="Hydrating Face Mask Pack" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-40 h-40 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-mask text-5xl text-violet-400"></i>
-                            </div>
-                        </div>
                         <div class="flex items-center mb-2">
                             <div class="flex text-amber-400">
                                 <i class="fas fa-star"></i>
@@ -339,11 +368,11 @@
                             </div>
                             <span class="text-gray-500 text-sm ml-2">(5.0)</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hydrating Face Mask Pack</h3>
-                        <p class="text-gray-600 text-sm mb-4">Set of 5 hydrating sheet masks for glowing skin.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្គរលាន់</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-800">$22.99</span>
-                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Hydrating Face Mask Pack" data-price="22.99">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្កា ផ្គរលាន់" data-price="5">
                                 <i class="fas fa-cart-plus"></i>
                             </button>
                         </div>
@@ -352,12 +381,13 @@
                 
                 <!-- Product 4 -->
                 <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810359506-Phka%2520Romdoul.jpg&w=640&q=75" 
+                             alt="Liquid Highlighter Glow" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-40 h-40 bg-gradient-to-r from-amber-100 to-yellow-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-highlighter text-5xl text-amber-400"></i>
-                            </div>
-                        </div>
                         <div class="flex items-center mb-2">
                             <div class="flex text-amber-400">
                                 <i class="fas fa-star"></i>
@@ -368,11 +398,134 @@
                             </div>
                             <span class="text-gray-500 text-sm ml-2">(4.5)</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Liquid Highlighter Glow</h3>
-                        <p class="text-gray-600 text-sm mb-4">Buildable liquid highlighter for a dewy, radiant finish.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ផ្ការំដួល</h3>
+                        <p class="text-gray-600 text-sm mb-4">ផ្ការំដួលគឺជាផ្កាតំណាងឲប្រទេសកម្ពុជា ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-800">$16.99</span>
-                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Liquid Highlighter Glow" data-price="16.99">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្ការំដួល" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Popular Products -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810352850-Phka%2520Nokoreach.jpg&w=640&q=75" 
+                             alt="Mascara Volume Boost" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">នរគរាជ</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្កា នរគរាជ" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810346644-Phka%2520Toek%2520Dos.jpg&w=640&q=75" 
+                             alt="Makeup Remover Cleansing Oil" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(4.5)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ទឹកដោះ</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Blush ផ្កា ទឹកដោះ" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1767810336605-Phka%2520Angkea%2520Dey.jpg&w=640&q=75" 
+                             alt="Eyebrow Defining Pencil" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">អង្គារដី</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="blush អង្គារដី" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1766682069097-Phka%2520Malis.png&w=640&q=75" 
+                             alt="Makeup Setting Powder" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(4.5)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">ម្លិះ</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil ផ្កា ម្លិះ" data-price="5">
                                 <i class="fas fa-cart-plus"></i>
                             </button>
                         </div>
@@ -382,7 +535,7 @@
             
             <div class="text-center mt-12">
                 <a href="#" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                    Shop All Popular <i class="fas fa-gem ml-2"></i>
+                    មើលទាំងអស់ <i class="fas fa-gem ml-2"></i>
                 </a>
             </div>
         </div>
@@ -419,8 +572,10 @@
                 </div>
                 <div class="lg:w-1/2 flex justify-center">
                     <div class="relative">
-                        <div class="w-80 h-80 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full flex items-center justify-center">
-                            <i class="fas fa-store-alt text-9xl text-white"></i>
+                        <div class="w-full max-w-lg">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                                 alt="Makeup Store" 
+                                 class="rounded-xl shadow-lg">
                         </div>
                         <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                             <div class="text-center">
@@ -449,7 +604,7 @@
                         <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
                             <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3 class="text-2xl font-bold">Glamour Boutique</h3>
+                        <h3 class="text-2xl font-bold">Srey Mouy SM</h3>
                     </div>
                     <p class="text-gray-400">Your destination for premium makeup products and unbeatable flash discounts.</p>
                 </div>
@@ -746,15 +901,110 @@
                 }
             });
             
-            // Product card hover effects enhancement
+            // Product image hover effects
             $('.product-card').hover(
                 function() {
-                    $(this).find('i').css('transform', 'scale(1.1)');
+                    $(this).find('.product-image').css('transform', 'scale(1.05)');
                 },
                 function() {
-                    $(this).find('i').css('transform', 'scale(1)');
+                    $(this).find('.product-image').css('transform', 'scale(1)');
                 }
             );
+            
+            // Quick view functionality for products
+            $('.product-card').click(function(e) {
+                if (!$(e.target).hasClass('add-to-cart') && !$(e.target).parent().hasClass('add-to-cart')) {
+                    const productName = $(this).find('h3').text();
+                    const productDesc = $(this).find('p').text();
+                    const productPrice = $(this).find('.text-2xl').text();
+                    const productImage = $(this).find('img').attr('src');
+                    
+                    // Create quick view modal
+                    const quickView = `
+                        <div class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
+                            <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                                <div class="p-6">
+                                    <div class="flex justify-between items-center mb-6">
+                                        <h3 class="text-2xl font-bold text-gray-800">Product Quick View</h3>
+                                        <button class="text-gray-500 hover:text-gray-800 text-2xl close-quickview">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col md:flex-row">
+                                        <div class="md:w-1/2 mb-6 md:mb-0 md:pr-6">
+                                            <img src="${productImage}" alt="${productName}" class="w-full rounded-lg shadow-lg">
+                                        </div>
+                                        <div class="md:w-1/2">
+                                            <h4 class="text-3xl font-bold text-gray-800 mb-4">${productName}</h4>
+                                            <p class="text-gray-600 mb-6">${productDesc}</p>
+                                            <div class="mb-6">
+                                                <span class="text-3xl font-bold text-gray-800">${productPrice}</span>
+                                                ${$(this).find('.line-through').length ? `<span class="text-gray-400 line-through ml-2">${$(this).find('.line-through').text()}</span>` : ''}
+                                            </div>
+                                            <button class="add-to-cart-quickview w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-4" data-product="${productName}" data-price="${productPrice.replace('$', '')}">
+                                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                                            </button>
+                                            <p class="text-gray-500 text-sm"><i class="fas fa-shipping-fast mr-2"></i>Free shipping on orders over $50</p>
+                                            <p class="text-gray-500 text-sm mt-2"><i class="fas fa-undo mr-2"></i>30-day return policy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    $('body').append(quickView);
+                    
+                    // Close quick view
+                    $('.close-quickview').click(function() {
+                        $(this).closest('.fixed').remove();
+                    });
+                    
+                    // Add to cart from quick view
+                    $('.add-to-cart-quickview').click(function() {
+                        const product = $(this).data('product');
+                        const price = parseFloat($(this).data('price'));
+                        
+                        // Update cart count
+                        cartCount++;
+                        $('#cart-count').text(cartCount);
+                        
+                        // Add to cart display
+                        const cartItem = `
+                            <div class="cart-item border-b py-4">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">${product}</h4>
+                                        <p class="text-gray-600 text-sm">$${price.toFixed(2)} x 1</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="font-bold text-gray-800 mr-4">$${price.toFixed(2)}</span>
+                                        <button class="remove-item text-red-500 hover:text-red-700">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        $('#cart-items').append(cartItem);
+                        
+                        // Update totals
+                        cartTotal += price;
+                        $('#cart-subtotal').text('$' + cartTotal.toFixed(2));
+                        $('#cart-total').text('$' + cartTotal.toFixed(2));
+                        
+                        // Show success message
+                        showNotification(`${product} added to cart!`);
+                        
+                        // Close quick view
+                        $('.close-quickview').closest('.fixed').remove();
+                        
+                        // Show cart sidebar
+                        $('#cart-overlay').fadeIn();
+                    });
+                }
+            });
         });
     </script>
 </body>
