@@ -11,84 +11,16 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="style.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
-    <style>
-    body{
+<style>
+body{
         font-family: "Koulen", sans-serif;
     }
-        /* Custom styles to enhance Tailwind */
-        .discount-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ef4444;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            z-index: 10;
-        }
-        .product-card {
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .product-image {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        .flash-timer {
-            background: linear-gradient(135deg, #f97316, #ec4899);
-            color: white;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #ec4899;
-            left: 0;
-            bottom: -5px;
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .brand-gradient {
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -116,7 +48,7 @@
                 <!-- Icons -->
                 <div class="flex items-center space-x-6">
                     <div class="relative">
-                        <i class="fas fa-shopping-cart text-gray-700 text-xl hover:text-pink-500 cursor-pointer"></i>
+                        <i class="fas fa-shopping-cart text-gray-700 text-xl hover:text-pink-500 cursor-pointer" id="open-cart"></i>
                         <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">3</span>
                     </div>
                     <div class="relative hidden md:block">
@@ -140,20 +72,45 @@
             </div>
         </div>
     </header>
+    <div class="herosection">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="500">
+      <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1762852193183-1762679948635-OSA_6184.jpg&w=1920&q=75" class="d-block w-100 h-75" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="500">
+      <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1762852193197-1762681297431-VX_04281-Edit-2.JPG&w=1920&q=75" class="d-block w-100 h-75" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="500">
+      <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1762852193176-1762682291924-VX_03907.jpg&w=1920&q=75" class="d-block w-100 h-75" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+
+
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-pink-50 to-purple-50 py-12 md:py-20">
+    <!-- <section class="bg-gradient-to-r from-pink-50 to-purple-50 py-12 md:py-20">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">New Blush SreyMoy Shop</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">New Blush SreyMouy Shop</h2>
                     <p class="text-gray-600 text-lg mb-8">បញ្ចុះតម្លៃរហោតទៅដល់៥០ភាគរយ ​ចុចទិញឥឡូវនេះពេលវេលាមានកំណត់ មានគ្រប់សាខាគ្រប់ទីកន្លែងទីក្រុងភ្នុំពេញ​ និង​ ២៥​ ខេត្តក្រុង</p>
                     <div class="flex space-x-4">
                         <a href="#flash-sale" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300">Buy Now</a>
                         <a href="#products" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg border border-gray-300 shadow transition duration-300">Browse All</a>
                     </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
+                </div> -->
+                <!-- <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
                         <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1743514707575-RE-EDIT-PKA%2528final%2529-27.jpg&w=3840&q=75" alt="Makeup Products" class="rounded-lg shadow-2xl w-full max-w-lg">
                         <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
@@ -167,7 +124,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Flash Sale Section -->
     <section id="flash-sale" class="py-16 bg-white">
@@ -241,7 +198,7 @@
                                 <span class="text-2xl font-bold text-gray-800">$5</span>
                                 <span class="text-gray-400 line-through ml-2">$10</span>
                             </div>
-                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil រំយោល" data-price="10">
+                            <button class="add-to-cart bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="Lip oil រំយោល" data-price="5">
                                 <i class="fas fa-cart-plus mr-2"></i>ទិញឥឡូវនេះ
                             </button>
                         </div>
@@ -532,6 +489,130 @@
                     </div>
                 </div>
             </div>
+                
+            
+            <!-- Additional Popular Products -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1763198482970-Petal%2520Keychain.png&w=640&q=75" 
+                             alt="Mascara Volume Boost" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">បណ្តោងស្រោប​ lip oil</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="បណ្តោងស្រោប​ lip oil" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1763198246488-Filligree%2520Keychain.png&w=640&q=75" 
+                             alt="Makeup Remover Cleansing Oil" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(4.5)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">បណ្តោងស្រោប​ ip oil</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="បណ្តោងស្រោប​ lip oil" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1763198195771-Coquette%2520Keychain.png&w=640&q=75" 
+                             alt="Eyebrow Defining Pencil" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">បណ្តោងស្រោប​ lip oil</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="បណ្តោងស្រោប lip oil" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1764843548632-Untitled%2520design%2520%25281%2529.png&w=640&q=75" 
+                             alt="Makeup Setting Powder" 
+                             class="product-image w-full">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-sm ml-2">(4.5)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">បណ្តោងស្រោប Lip oil</h3>
+                        <p class="text-gray-600 text-sm mb-4">ចុចកម្មង់ទិញឥឡូវនេះ ពេលវេលមានកំណត់ ៥$​ តែប៉ុណ្ណោះ</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-800">$5</span>
+                            <button class="add-to-cart bg-gray-800 hover:bg-black text-white font-bold py-2 px-4 rounded-lg transition duration-300" data-product="បណ្តោងស្រោប​ lip oil" data-price="5">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="text-center mt-12">
                 <a href="#" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
@@ -546,27 +627,27 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-10 lg:mb-0">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Glamour Boutique</h2>
-                    <p class="text-gray-600 mb-6">We're passionate about bringing you the highest quality makeup products from around the world. Our team of beauty experts tests every product to ensure it meets our standards for performance, safety, and ethical production.</p>
-                    <p class="text-gray-600 mb-8">With flash discounts on premium brands and a curated selection of popular products, we make luxury beauty accessible to everyone.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">អំពី Srey Mouy Shop</h2>
+                    <p class="text-gray-600 mb-6">យើងមានចំណង់ចំណូលចិត្តយ៉ាងខ្លាំងក្នុងការនាំមកឱ្យអ្នកនូវផលិតផលម៉ាកឡត់តាក់កម្រាស់ដែលមានគុណភាពខ្ពស់បំផុតពីទូទាំងពិភពលោក។</p>
+                    <p class="text-gray-600 mb-8">ជាមួយនឹងការបញ្ចុះតម្លៃពិសេសលើម៉ាកកម្រាស់ និងការជ្រើសរើសផលិតផលពេញនិយម យើងធ្វើឱ្យសម្រស់ថ្នាក់ពិសេសអាចទទួលបានដោយគ្រប់គ្នា។</p>
                     <div class="flex flex-wrap gap-4">
                         <div class="flex items-center">
                             <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
                                 <i class="fas fa-check text-pink-500"></i>
                             </div>
-                            <span class="font-medium">Cruelty-Free Products</span>
+                            <span class="font-medium">ផលិតផលគ្មានឃ្នងសត្វ</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
                                 <i class="fas fa-check text-pink-500"></i>
                             </div>
-                            <span class="font-medium">Vegan Options</span>
+                            <span class="font-medium">ជម្រើសសម្រាប់អ្នកបួស</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-3">
                                 <i class="fas fa-check text-pink-500"></i>
                             </div>
-                            <span class="font-medium">Free Shipping Over $50</span>
+                            <span class="font-medium">ដឹកជញ្ជូនឥតគិតថ្លៃលើសពី $50</span>
                         </div>
                     </div>
                 </div>
@@ -580,13 +661,13 @@
                         <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                             <div class="text-center">
                                 <p class="text-4xl font-bold text-pink-500">5,000+</p>
-                                <p class="text-gray-600">Happy Customers</p>
+                                <p class="text-gray-600">អតិថិជនរីករាយ</p>
                             </div>
                         </div>
                         <div class="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
                             <div class="text-center">
                                 <p class="text-4xl font-bold text-purple-500">200+</p>
-                                <p class="text-gray-600">Premium Products</p>
+                                <p class="text-gray-600">ផលិតផលថ្នាក់ពិសេស</p>
                             </div>
                         </div>
                     </div>
@@ -604,33 +685,33 @@
                         <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
                             <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3 class="text-2xl font-bold">Srey Mouy SM</h3>
+                        <h3 class="text-2xl font-bold">Srey Mouy Shop</h3>
                     </div>
-                    <p class="text-gray-400">Your destination for premium makeup products and unbeatable flash discounts.</p>
+                    <p class="text-gray-400">ទីតាំងរបស់អ្នកសម្រាប់ផលិតផលម៉ាកឡត់តាក់កម្រាស់ថ្នាក់ពិសេស និងការបញ្ចុះតម្លៃពិសេសដែលមិនអាចប្រៀបផ្ទឹមបាន។</p>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-xl font-bold mb-6">តំណភ្ជាប់រហ័ស</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Home</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-pink-400 transition duration-300">All Products</a></li>
-                        <li><a href="#flash-sale" class="text-gray-400 hover:text-pink-400 transition duration-300">Flash Sale</a></li>
-                        <li><a href="#popular" class="text-gray-400 hover:text-pink-400 transition duration-300">Popular</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">ទំព័រដើម</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-pink-400 transition duration-300">ផលិតផលទាំងអស់</a></li>
+                        <li><a href="#flash-sale" class="text-gray-400 hover:text-pink-400 transition duration-300">ការលក់ពិសេស</a></li>
+                        <li><a href="#popular" class="text-gray-400 hover:text-pink-400 transition duration-300">ពេញនិយម</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Support</h4>
+                    <h4 class="text-xl font-bold mb-6">ជំនួយ</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">FAQs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Shipping Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">ទាក់ទងពួកយើង</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">សំណួរដែលសួរញឹកញាប់</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">គោលការណ៍ដឹកជញ្ជូន</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">ការត្រឡប់ និងផ្លាស់ប្តូរ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold mb-6">Stay Connected</h4>
-                    <p class="text-gray-400 mb-6">Subscribe to get exclusive flash sale alerts!</p>
+                    <h4 class="text-xl font-bold mb-6">ទាក់ទងជាមួយ</h4>
+                    <p class="text-gray-400 mb-6">ជាវដើម្បីទទួលបានការជូនដំណឹងអំពីការលក់ពិសេស!</p>
                     <div class="flex">
-                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-3 rounded-l-lg w-full focus:outline-none">
+                        <input type="email" placeholder="អ៊ីមែលរបស់អ្នក" class="bg-gray-800 text-white px-4 py-3 rounded-l-lg w-full focus:outline-none">
                         <button class="bg-pink-500 hover:bg-pink-600 px-4 rounded-r-lg">
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -652,7 +733,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
-                <p>&copy; 2023 Glamour Boutique. All rights reserved. | Designed with <i class="fas fa-heart text-pink-500"></i> for beauty enthusiasts</p>
+                <p>&copy; 2023 Srey Mouy Shop. All rights reserved. | Designed with <i class="fas fa-heart text-pink-500"></i> for beauty enthusiasts</p>
             </div>
         </div>
     </footer>
@@ -662,7 +743,7 @@
         <div class="absolute right-0 top-0 h-full w-full md:w-1/3 bg-white shadow-lg overflow-y-auto">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800">Your Cart</h3>
+                    <h3 class="text-2xl font-bold text-gray-800">កន្ត្រករបស់អ្នក</h3>
                     <button id="close-cart" class="text-gray-500 hover:text-gray-800 text-2xl">
                         <i class="fas fa-times"></i>
                     </button>
@@ -700,24 +781,131 @@
                 </div>
                 <div class="border-t pt-4">
                     <div class="flex justify-between mb-4">
-                        <span class="text-gray-600">Subtotal</span>
+                        <span class="text-gray-600">សរុបរង</span>
                         <span class="font-bold text-gray-800" id="cart-subtotal">$15</span>
                     </div>
                     <div class="flex justify-between mb-6">
-                        <span class="text-gray-600">Shipping</span>
-                        <span class="font-bold text-green-600">FREE</span>
+                        <span class="text-gray-600">ដឹកជញ្ជូន</span>
+                        <span class="font-bold text-green-600">ឥតគិតថ្លៃ</span>
                     </div>
                     <div class="flex justify-between text-xl font-bold mb-8">
-                        <span>Total</span>
+                        <span>សរុប</span>
                         <span id="cart-total">$15</span>
                     </div>
-                    <button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-4">
-                        Proceed to Checkout
+                    <button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-4" id="proceed-checkout">
+                        បន្តទៅគិតលុយ
                     </button>
                     <button id="continue-shopping" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg transition duration-300">
-                        Continue Shopping
+                        បន្តទិញទំនិញ
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">ទំព័រគិតលុយ</h2>
+                <button class="text-gray-500 hover:text-gray-800 text-2xl" id="close-checkout">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-2">ព័ត៌មានអតិថិជន</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">លេខទូរស័ព្ទ *</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="បញ្ចូលលេខទូរស័ព្ទ" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">អ៊ីមែល *</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="បញ្ចូលអ៊ីមែល" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-2">ព័ត៌មានការបញ្ជាទិញ</h3>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div id="checkout-items">
+                        <!-- Order items will be dynamically added here -->
+                    </div>
+                    <div class="flex justify-between font-bold text-lg mt-4 pt-4 border-t">
+                        <span>សរុប</span>
+                        <span id="checkout-total">$15</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-2">ជ្រើសរើសវិធីបង់ប្រាក់</h3>
+                <div class="payment-methods">
+                    <div class="payment-method active" data-method="qr">
+                        <i class="fas fa-qrcode"></i>
+                        <p>QR Code</p>
+                    </div>
+                    <div class="payment-method" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <p>ការផ្ទេរតាមធនាគារ</p>
+                    </div>
+                    <div class="payment-method" data-method="cash">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <p>បង់សាច់ប្រាក់</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- QR Code Payment -->
+            <div class="qr-payment">
+                <div class="qr-code-container">
+                    <h4 class="font-bold text-gray-800 mb-4">ស្កេន QR Code ដើម្បីបង់ប្រាក់</h4>
+                    <div class="qr-code">
+                        <!-- QR Code Image -->
+                        <img src="IMG_1553.JPG" alt="QR Code">
+                    </div>
+                    <p class="mt-4 text-gray-600">សូមស្កេន QR Code ខាងលើដោយប្រើកម្មវិធីធនាគាររបស់អ្នក</p>
+                </div>
+            </div>
+            
+            <!-- Bank Transfer Details -->
+            <div class="bank-details">
+                <h4 class="font-bold text-gray-800 mb-4">ព័ត៌មានធនាគារ</h4>
+                <div class="space-y-3">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">ឈ្មោះធនាគារ:</span>
+                        <span class="font-bold">AC Bank</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">ឈ្មោះគណនី:</span>
+                        <span class="font-bold">SREY MOUY SHOP</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">លេខគណនី:</span>
+                        <span class="font-bold">123 456 789</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">លេខទូរស័ព្ទ:</span>
+                        <span class="font-bold">093 318 655</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cash Payment Instructions -->
+            <div class="bank-details">
+                <h4 class="font-bold text-gray-800 mb-4">ការបង់សាច់ប្រាក់</h4>
+                <p class="text-gray-600">សូមទៅកាន់សាខារបស់យើងដើម្បីបង់សាច់ប្រាក់។ សាខារបស់យើងមាននៅទីក្រុងភ្នំពេញ និង ២៥ ខេត្តក្រុង។</p>
+            </div>
+            
+            <div class="mt-8">
+                <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-4" id="confirm-payment">
+                    <i class="fas fa-check-circle mr-2"></i>បញ្ជាក់ការបង់ប្រាក់
+                </button>
+                <button class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg transition duration-300" id="cancel-checkout">
+                    មិនបង់ទេ
+                </button>
             </div>
         </div>
     </div>
@@ -736,7 +924,7 @@
             let cartTotal = 15.00;
             
             // Show cart sidebar
-            $('.fa-shopping-cart').click(function() {
+            $('#open-cart, .fa-shopping-cart').click(function() {
                 $('#cart-overlay').fadeIn();
             });
             
@@ -782,7 +970,7 @@
                 $('#cart-total').text('$' + cartTotal.toFixed(2));
                 
                 // Show success message
-                showNotification(`${product} added to cart!`);
+                showNotification(`${product} ត្រូវបានបន្ថែមទៅកន្ត្រក!`);
                 
                 // Show cart sidebar
                 $('#cart-overlay').fadeIn();
@@ -807,11 +995,11 @@
                 item.remove();
                 
                 // Show notification
-                showNotification('Item removed from cart');
+                showNotification('ធាតុត្រូវបានដកចេញពីកន្ត្រក');
                 
                 // If cart is empty, show message
                 if ($('#cart-items').children().length === 0) {
-                    $('#cart-items').html('<p class="text-gray-500 text-center py-4">Your cart is empty</p>');
+                    $('#cart-items').html('<p class="text-gray-500 text-center py-4">កន្ត្រករបស់អ្នកទទេ</p>');
                 }
             });
             
@@ -894,10 +1082,10 @@
             $('footer button.bg-pink-500').click(function() {
                 const email = $(this).siblings('input').val();
                 if (email && email.includes('@')) {
-                    showNotification('Thanks for subscribing to our newsletter!');
+                    showNotification('សូមអរគុណសម្រាប់ការជាវព័ត៌មានរបស់យើង!');
                     $(this).siblings('input').val('');
                 } else {
-                    showNotification('Please enter a valid email address');
+                    showNotification('សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ');
                 }
             });
             
@@ -925,7 +1113,7 @@
                             <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                                 <div class="p-6">
                                     <div class="flex justify-between items-center mb-6">
-                                        <h3 class="text-2xl font-bold text-gray-800">Product Quick View</h3>
+                                        <h3 class="text-2xl font-bold text-gray-800">មើលផលិតផលយ៉ាងរហ័ស</h3>
                                         <button class="text-gray-500 hover:text-gray-800 text-2xl close-quickview">
                                             <i class="fas fa-times"></i>
                                         </button>
@@ -942,10 +1130,10 @@
                                                 ${$(this).find('.line-through').length ? `<span class="text-gray-400 line-through ml-2">${$(this).find('.line-through').text()}</span>` : ''}
                                             </div>
                                             <button class="add-to-cart-quickview w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-4" data-product="${productName}" data-price="${productPrice.replace('$', '')}">
-                                                <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+                                                <i class="fas fa-cart-plus mr-2"></i>បន្ថែមទៅកន្ត្រក
                                             </button>
-                                            <p class="text-gray-500 text-sm"><i class="fas fa-shipping-fast mr-2"></i>Free shipping on orders over $50</p>
-                                            <p class="text-gray-500 text-sm mt-2"><i class="fas fa-undo mr-2"></i>30-day return policy</p>
+                                            <p class="text-gray-500 text-sm"><i class="fas fa-shipping-fast mr-2"></i>ដឹកជញ្ជូនឥតគិតថ្លៃលើការបញ្ជាទិញលើសពី $50</p>
+                                            <p class="text-gray-500 text-sm mt-2"><i class="fas fa-undo mr-2"></i>គោលការណ៍ត្រឡប់ ៣០ថ្ងៃ</p>
                                         </div>
                                     </div>
                                 </div>
@@ -995,7 +1183,7 @@
                         $('#cart-total').text('$' + cartTotal.toFixed(2));
                         
                         // Show success message
-                        showNotification(`${product} added to cart!`);
+                        showNotification(`${product} ត្រូវបានបន្ថែមទៅកន្ត្រក!`);
                         
                         // Close quick view
                         $('.close-quickview').closest('.fixed').remove();
@@ -1005,6 +1193,115 @@
                     });
                 }
             });
+            
+            // Checkout functionality
+            $('#proceed-checkout').click(function() {
+                // Close cart overlay
+                $('#cart-overlay').fadeOut();
+                
+                // Populate checkout items
+                $('#checkout-items').empty();
+                $('#cart-items .cart-item').each(function() {
+                    const productName = $(this).find('h4').text();
+                    const productPrice = $(this).find('.font-bold.text-gray-800').first().text();
+                    
+                    const checkoutItem = `
+                        <div class="flex justify-between mb-2">
+                            <span>${productName}</span>
+                            <span class="font-bold">${productPrice}</span>
+                        </div>
+                    `;
+                    $('#checkout-items').append(checkoutItem);
+                });
+                
+                // Update checkout total
+                $('#checkout-total').text('$' + cartTotal.toFixed(2));
+                
+                // Update QR code with current amount
+                
+                // Show checkout modal
+                $('#checkout-modal').fadeIn();
+            });
+            
+            // Close checkout modal
+            $('#close-checkout, #cancel-checkout, #checkout-modal').click(function(e) {
+                if (e.target === this || $(e.target).attr('id') === 'close-checkout' || $(e.target).attr('id') === 'cancel-checkout') {
+                    $('#checkout-modal').fadeOut();
+                }
+            });
+            
+            // Payment method selection
+            $('.payment-method').click(function() {
+                $('.payment-method').removeClass('active');
+                $(this).addClass('active');
+                
+                const method = $(this).data('method');
+                
+                // Hide all payment details
+                $('.qr-payment').hide();
+                $('.bank-details').removeClass('active');
+                
+                // Show selected payment method details
+                if (method === 'qr') {
+                    $('.qr-payment').show();
+                } else if (method === 'bank') {
+                    $('.bank-details').eq(0).addClass('active');
+                } else if (method === 'cash') {
+                    $('.bank-details').eq(1).addClass('active');
+                }
+            });
+            
+            // Confirm payment
+            $('#confirm-payment').click(function() {
+                const phone = $('#phone').val();
+                const email = $('#email').val();
+                
+                // Validate form
+                if (!phone || !email) {
+                    showNotification('សូមបំពេញលេខទូរស័ព្ទ និងអ៊ីមែល!');
+                    return;
+                }
+                
+                if (!email.includes('@')) {
+                    showNotification('សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ!');
+                    return;
+                }
+                
+                // Get selected payment method
+                const selectedMethod = $('.payment-method.active').data('method');
+                let methodText = '';
+                if (selectedMethod === 'qr') methodText = 'QR Code';
+                else if (selectedMethod === 'bank') methodText = 'ការផ្ទេរតាមធនាគារ';
+                else if (selectedMethod === 'cash') methodText = 'សាច់ប្រាក់';
+                
+                // Show success message
+                showNotification(`ការបញ្ជាទិញរបស់អ្នកត្រូវបានទទួល! យើងនឹងទាក់ទងទៅលេខ ${phone} សម្រាប់ការបញ្ជាក់។ វិធីបង់ប្រាក់៖ ${methodText}`);
+                
+                // Clear cart
+                cartCount = 0;
+                cartTotal = 0;
+                $('#cart-count').text('0');
+                $('#cart-items').html('<p class="text-gray-500 text-center py-4">កន្ត្រករបស់អ្នកទទេ</p>');
+                $('#cart-subtotal').text('$0.00');
+                $('#cart-total').text('$0.00');
+                
+                // Close checkout modal
+                $('#checkout-modal').fadeOut();
+                
+                // Reset form
+                $('#phone').val('');
+                $('#email').val('');
+                
+                // Reset payment method to QR
+                $('.payment-method').removeClass('active');
+                $('.payment-method[data-method="qr"]').addClass('active');
+                $('.qr-payment').show();
+                $('.bank-details').removeClass('active');
+            });
+            
+            // Initialize payment method display
+            $('.payment-method[data-method="qr"]').addClass('active');
+            $('.qr-payment').show();
         });
     </script>
 </body>
